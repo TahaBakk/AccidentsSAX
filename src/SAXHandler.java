@@ -31,25 +31,29 @@ public class SAXHandler extends DefaultHandler {
     String codiDistricte="";
 
 
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
-        if (qName.equalsIgnoreCase("Registre"))
+
+    @Override
+    public void startElement(String s, String s1, String s2, jdk.internal.org.xml.sax.Attributes attributes) throws jdk.internal.org.xml.sax.SAXException {
+
+        if (s.equalsIgnoreCase("Registre"))
             contador_Accidents++;
-        if (qName.equalsIgnoreCase("nomBarri"))
+        if (s.equalsIgnoreCase("nomBarri"))
             is_nomBarri=true;
-        if (qName.equalsIgnoreCase("nomCarrer"))
+        if (s.equalsIgnoreCase("nomCarrer"))
             is_nomCarrer=true;
-        if (qName.equalsIgnoreCase("diaDeSetmana"))
+        if (s.equalsIgnoreCase("diaDeSetmana"))
             is_diaDeSetmana=true;
-        if (qName.equalsIgnoreCase("diaDeMes"))
+        if (s.equalsIgnoreCase("diaDeMes"))
             is_diaDeMes=true;
-        if (qName.equalsIgnoreCase("nomMes"))
+        if (s.equalsIgnoreCase("nomMes"))
             is_nomMes=true;
-        if (qName.equalsIgnoreCase("horaDedia"))
+        if (s.equalsIgnoreCase("horaDedia"))
             is_horaDedia=true;
-        if (qName.equalsIgnoreCase("codiDistricte"))
+        if (s.equalsIgnoreCase("codiDistricte"))
             is_codiDistricte=true;
+
+
     }
 
     @Override

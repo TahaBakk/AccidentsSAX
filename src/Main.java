@@ -1,3 +1,5 @@
+import jdk.internal.org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -10,7 +12,7 @@ import java.io.InputStream;
  */
 public class Main {
 
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) throws IOException, SAXException {
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
@@ -32,13 +34,13 @@ public class Main {
     }
 
 
-    public static void tractarllistat(SAXHandler sax){
+    public static void tractarllistat(SAXHandler sax) {
 
-        for(Accidents acc: sax.accList) {
-            System.out.println("El Nombre del pokemon es: "+acc.getNombre()+"\nLa classe es: "); }
+        for (Accidents acc : sax.accList) {
+            System.out.println("Codi districte: " + acc.getCodiDistricte() + "\n");
+        }
 
 
-
-
+    }
 
 }
