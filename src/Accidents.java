@@ -3,28 +3,28 @@
  */
 public class Accidents {
 
-    String numExpedient="";
-    String codiDistricte="";
-    String nKbarri="";
-    String nomBarri="";
-    String codiCarrer="";
-    String nomCarrer="";
-    String numPostalCaption="";
-    String descripcioDiaSetmana="";
-    String Diadesetmana="";
-    String Descripciotipusdia="";
-    String NKAny="";
-    String Mesdeany="";
-    String Nommes="";
-    String Diademes="";
-    String Horadedia="";
-    String Descripciotorn="";
-    String Descripciocausavianant="";
-    String Numerodelesionatslleus="";
-    String Numerodelesionatsgreus="";
-    String Numerodevehiclesimplicats="";
-    String CoordenadaUTMY="";
-    String CoordenadaUTMX="";
+     String numExpedient="";
+     String codiDistricte="";
+     String nKbarri="";
+     String nomBarri="";
+     String codiCarrer="";
+     String nomCarrer="";
+     String numPostalCaption="";
+     String descripcioDiaSetmana="";
+     String Diadesetmana="";
+     String Descripciotipusdia="";
+     String NKAny="";
+     String Mesdeany="";
+     String Nommes="";
+     String Diademes="";
+     String Horadedia="";
+     String Descripciotorn="";
+     String Descripciocausavianant="";
+     String Numerodelesionatslleus="";
+     String Numerodelesionatsgreus="";
+     String Numerodevehiclesimplicats="";
+     String CoordenadaUTMY="";
+     String CoordenadaUTMX="";
 
     //GETTERS
     public String getNumExpedient() {return numExpedient;}

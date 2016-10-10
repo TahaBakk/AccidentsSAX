@@ -21,10 +21,10 @@ public class Main {
         try {
             SAXParser saxParser = factory.newSAXParser();
             Saxhandler handler = new Saxhandler();
-
             saxParser.parse(xmlInput,handler);
 
             tractarllistat(handler);
+            calcularAccidentDistrictes(handler);
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -40,8 +40,28 @@ public class Main {
         for (Accidents acc : sax.accList) {
             System.out.println("Codi districte: " + acc.getCodiDistricte() + "\n");
         }
-
-
     }
+
+    public static void calcularAccidentDistrictes(Saxhandler sax){
+
+        int mayor =0;
+        int menor =0;
+
+        for (Accidents acc : sax.accList) {
+
+            int num = Integer.parseInt(acc.getCodiDistricte());
+
+            if (mayor < num){mayor=num;}
+            if (menor > num){menor=num;}
+
+
+
+
+
+
+        }
+
+
+        }
 
 }

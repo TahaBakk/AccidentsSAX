@@ -34,26 +34,23 @@ public class Saxhandler extends DefaultHandler {
     @Override
     public void startElement(String s, String s1, String s2, Attributes attributes) throws SAXException {
 
-        if (s.equalsIgnoreCase("Registre"))
+        if (s2.equalsIgnoreCase("Registre"))
             contador_Accidents++;
-        if (s.equalsIgnoreCase("Nombarri"))
+        if (s2.equalsIgnoreCase("Nombarri"))
             is_nomBarri=true;
-        if (s.equalsIgnoreCase("Nomcarrer"))
+        if (s2.equalsIgnoreCase("Nomcarrer"))
             is_nomCarrer=true;
-        if (s.equalsIgnoreCase("Diadesetmana"))
+        if (s2.equalsIgnoreCase("Diadesetmana"))
             is_diaDeSetmana=true;
-        if (s.equalsIgnoreCase("Diademes"))
+        if (s2.equalsIgnoreCase("Diademes"))
             is_diaDeMes=true;
-        if (s.equalsIgnoreCase("Nommes"))
+        if (s2.equalsIgnoreCase("Nommes"))
             is_nomMes=true;
-        if (s.equalsIgnoreCase("Horadedia"))
+        if (s2.equalsIgnoreCase("Horadedia"))
             is_horaDedia=true;
-        if (s.equalsIgnoreCase("Codidistricte"))
+        if (s2.equalsIgnoreCase("Codidistricte"))
             is_codiDistricte=true;
-
-
     }
-
 
 
     @Override
@@ -72,10 +69,14 @@ public class Saxhandler extends DefaultHandler {
 
     }
 
+  /*  @Override
+    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
+    }*/
+
     @Override
     public void characters(char[] ch, int start, int length){
-        String value = new String(ch, start, length).trim();
 
+        String value = new String(ch, start, length).trim();
 
         if(value.length()==0)return;
         if (is_nomBarri){
