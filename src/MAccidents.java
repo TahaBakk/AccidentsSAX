@@ -10,15 +10,22 @@ public class MAccidents {
     }
 
 
-    public static void carrerConflictiu((Saxhandler sax) {
+    public static void carrerConflictiu(Saxhandler sax) {
 
         HashSet<String> hs = new HashSet<String>();
         for (Accidents acc: sax.accList) {
-            hs.add(acc.codiCarrer);
+            hs.add(acc.getCodiCarrer());
+
         }
         for (String hs1 : hs) {
-            System.out.println(hs1);
+
+            for (Accidents acc: sax.accList) {
+
+                
+            }
         }
+
+
 
     }
 

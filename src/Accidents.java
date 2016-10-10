@@ -24,7 +24,18 @@ public class Accidents {
      String Numerodelesionatsgreus="";
      String Numerodevehiclesimplicats="";
      String CoordenadaUTMY="";
-     String CoordenadaUTMX="";
+
+    public void setNomDistricte(String nomDistricte) {
+        this.nomDistricte = nomDistricte;
+    }
+
+    String CoordenadaUTMX="";
+
+    public String getNomDistricte() {
+        return nomDistricte;
+    }
+
+    String nomDistricte="";
 
     //GETTERS
     public String getNumExpedient() {return numExpedient;}

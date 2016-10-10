@@ -21,6 +21,10 @@ public class Saxhandler extends DefaultHandler {
     boolean is_nomMes =false;
     boolean is_horaDedia =false;
     boolean is_codiDistricte =false;
+    boolean is_Nomdistricte =false;
+    boolean is_codiCarrer =false;
+
+
 
     String nomBarri ="";
     String nomCarrer ="";
@@ -29,6 +33,8 @@ public class Saxhandler extends DefaultHandler {
     String nomMes ="";
     String horaDedia ="";
     String codiDistricte="";
+    String Nomdistricte="";
+    String codiCarrer="";
 
 
     @Override
@@ -50,6 +56,11 @@ public class Saxhandler extends DefaultHandler {
             is_horaDedia=true;
         if (s2.equalsIgnoreCase("Codidistricte"))
             is_codiDistricte=true;
+        if (s2.equalsIgnoreCase("Nomdistricte"))
+            is_Nomdistricte=true;
+        if (s2.equalsIgnoreCase("Codicarrer"))
+            is_codiCarrer=true;
+
     }
 
 
@@ -64,6 +75,8 @@ public class Saxhandler extends DefaultHandler {
             acc.setDiademes(diaDeMes);
             acc.setNommes(nomMes);
             acc.setCodiDistricte(codiDistricte);
+            acc.setNomDistricte(Nomdistricte);
+            acc.setCodiCarrer(codiCarrer);
 
             accList.add(acc); }
 
@@ -100,10 +113,13 @@ public class Saxhandler extends DefaultHandler {
         }else if(is_codiDistricte){
             codiDistricte = value;
             is_codiDistricte= false;
+        }else if(is_Nomdistricte){
+            Nomdistricte = value;
+            is_Nomdistricte= false;
+        }else if(is_codiCarrer){
+            codiCarrer = value;
+            is_codiCarrer= false;
         }
-
-
-
     }
 
     @Override
