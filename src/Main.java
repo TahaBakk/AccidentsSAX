@@ -1,4 +1,4 @@
-import jdk.internal.org.xml.sax.SAXException;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -20,8 +20,9 @@ public class Main {
 
         try {
             SAXParser saxParser = factory.newSAXParser();
-            SAXHandler handler = new SAXHandler();
-            saxParser.parse(xmlInput, handler);
+            Saxhandler handler = new Saxhandler();
+
+            saxParser.parse(xmlInput,handler);
 
             tractarllistat(handler);
 
@@ -34,7 +35,7 @@ public class Main {
     }
 
 
-    public static void tractarllistat(SAXHandler sax) {
+    public static void tractarllistat(Saxhandler sax) {
 
         for (Accidents acc : sax.accList) {
             System.out.println("Codi districte: " + acc.getCodiDistricte() + "\n");

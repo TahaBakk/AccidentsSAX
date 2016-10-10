@@ -1,6 +1,6 @@
-import jdk.internal.org.xml.sax.helpers.DefaultHandler;
-import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by x3727349s on 03/10/16.
  */
-public class SAXHandler extends DefaultHandler {
+public class Saxhandler extends DefaultHandler {
 
     int contador_Accidents = 0;
     Accidents Acc = new Accidents();
@@ -31,30 +31,30 @@ public class SAXHandler extends DefaultHandler {
     String codiDistricte="";
 
 
-
-
     @Override
-    public void startElement(String s, String s1, String s2, jdk.internal.org.xml.sax.Attributes attributes) throws jdk.internal.org.xml.sax.SAXException {
+    public void startElement(String s, String s1, String s2, Attributes attributes) throws SAXException {
 
         if (s.equalsIgnoreCase("Registre"))
             contador_Accidents++;
-        if (s.equalsIgnoreCase("nomBarri"))
+        if (s.equalsIgnoreCase("Nombarri"))
             is_nomBarri=true;
-        if (s.equalsIgnoreCase("nomCarrer"))
+        if (s.equalsIgnoreCase("Nomcarrer"))
             is_nomCarrer=true;
-        if (s.equalsIgnoreCase("diaDeSetmana"))
+        if (s.equalsIgnoreCase("Diadesetmana"))
             is_diaDeSetmana=true;
-        if (s.equalsIgnoreCase("diaDeMes"))
+        if (s.equalsIgnoreCase("Diademes"))
             is_diaDeMes=true;
-        if (s.equalsIgnoreCase("nomMes"))
+        if (s.equalsIgnoreCase("Nommes"))
             is_nomMes=true;
-        if (s.equalsIgnoreCase("horaDedia"))
+        if (s.equalsIgnoreCase("Horadedia"))
             is_horaDedia=true;
-        if (s.equalsIgnoreCase("codiDistricte"))
+        if (s.equalsIgnoreCase("Codidistricte"))
             is_codiDistricte=true;
 
 
     }
+
+
 
     @Override
     public void endElement(String uri, String localName, String qName){
@@ -66,7 +66,7 @@ public class SAXHandler extends DefaultHandler {
             acc.setDiadesetmana(diaDeSetmana);
             acc.setDiademes(diaDeMes);
             acc.setNommes(nomMes);
-            acc.setHoradedia(codiDistricte);
+            acc.setCodiDistricte(codiDistricte);
 
             accList.add(acc); }
 
@@ -106,7 +106,7 @@ public class SAXHandler extends DefaultHandler {
     }
 
     @Override
-    public void startDocument(){System.out.println("Comença a llegir");}
+    public void startDocument() {System.out.println("Comença a llegir");}
 
     @Override
     public void endDocument(){System.out.println("Acaba de llegir");}
