@@ -27,7 +27,8 @@ public class Main {
             //tractarllistat(handler);
             //MAccidents.calcularAccidentDistrictes(handler);
             //MAccidents.carrerConflictiu(handler);
-            MAccidents.calcularDiaAccident(handler);
+            //MAccidents.calcularDiaAccident(handler);
+            MAccidents.calcularAccidentMes(handler);
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
