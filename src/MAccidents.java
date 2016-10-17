@@ -1,3 +1,6 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -9,31 +12,56 @@ public class MAccidents {
 
     }
 
-
+    //Aquet codi he tingut que ferlo amb haset(per tindre codis no repetits) i arraylist
     public static void carrerConflictiu(Saxhandler sax) {
 
+
         HashSet<String> hs = new HashSet<String>();
+        ArrayList<Integer> listCodisCarrers = new ArrayList<Integer>();
+        ArrayList<String> listaCodisnoRepetits = new ArrayList<String>();
+
+
+        /*El que estic fent es pasar tot el arraylist per hashSet per a no tindre el codi del carrer repetit.(el que fa el hashset es no tindre valor repetits)*/
         for (Accidents acc: sax.accList) {
             hs.add(acc.getCodiCarrer());
-
         }
-        for (String hs1 : hs) {
+       /* Això es per calcular cuants accidents hi ha agut en el carrers i el enmagatzemen en un arraylist anomenat listCodisCarrers*/
+        for (String lista  : hs) {
+            int contadorCarrerConflictiu=0;
 
-            for (Accidents acc: sax.accList) {
+            for (Accidents acc  : sax.accList) {
+                if(lista.equalsIgnoreCase(acc.getCodiCarrer())){
+                    contadorCarrerConflictiu++;
+                }
+            }
+            listCodisCarrers.add(contadorCarrerConflictiu);
+        }
+        /*per trobar la posicio que te el carrer més conflictiu*/
+        int lsnumeroMayor=0, lsposicion=0;
+        for (int i=1;i<listCodisCarrers.size();i++){
 
-                
+            if (listCodisCarrers.get(i).intValue() >lsnumeroMayor){
+                lsnumeroMayor = listCodisCarrers.get(i).intValue();
+                lsposicion = i;
             }
         }
+        /*Paso el hashSet a un arraylist per trobar on tinc enmagatzemat el codi*/
+        for (String hs1: hs){
+           listaCodisnoRepetits.add(hs1);
+        }
 
-
-
+        String codiCarrerMésConflictiu = listaCodisnoRepetits.get(lsposicion).toString();
+        String nombrecalle="";
+        //D'aqui extreim el nom del carrer més conflictiu
+        for (Accidents acc: sax.accList) {
+            if(acc.getCodiCarrer().equalsIgnoreCase(codiCarrerMésConflictiu)){
+                nombrecalle = acc.getNomCarrer();
+            }
+        }
+        System.out.println("El carrer més conflictiu és: "+nombrecalle+" amb "+lsnumeroMayor);
     }
 
-
-
-
-
-
+    //Utilizat el switch (la manera més fàcil)
     public static void calcularAccidentDistrictes(Saxhandler sax){
 
         int  santMarti=0;
@@ -134,6 +162,134 @@ public class MAccidents {
 
     }
 
+    //Utilizat el switch (la manera més fàcil)
+    public static void calcularDiaAccident(Saxhandler sax) {
+
+        int lunes = 0;
+        int martes = 0;
+        int miercoles = 0;
+        int jueves = 0;
+        int viernes = 0;
+        int sabado = 0;
+        int domingo = 0;
+        int diaMesAccidents=0;
 
 
+       /* HashSet<String> hs = new HashSet<String>();
+        for (Accidents acc: sax.accList) {
+            hs.add(acc.getDiadesetmana());
+        }
+
+        for (String hs1: hs) {
+            System.out.println(hs1);
+        }*/
+        //Per saber cuants accidents han agut en cada districte
+        for (Accidents acc : sax.accList) {
+            switch (acc.getDiadesetmana()) {
+                case "Dl":
+                    lunes++;
+                    break;
+                case "Dm":
+                    martes++;
+                    break;
+                case "Dc":
+                    miercoles++;
+                    break;
+                case "Dj":
+                    jueves++;
+                    break;
+                case "Dv":
+                    viernes++;
+                    break;
+                case "Ds":
+                    sabado++;
+                    break;
+                case "Dg":
+                    domingo++;
+                    break;
+            }
+        }
+
+            //Per saber quin dia te més accidents
+            if (diaMesAccidents < lunes) {
+                diaMesAccidents = lunes;
+            }
+            if (diaMesAccidents < martes) {
+                diaMesAccidents = martes;
+            }
+            if (diaMesAccidents < miercoles) {
+                diaMesAccidents = miercoles;
+            }
+            if (diaMesAccidents < jueves) {
+                diaMesAccidents = jueves;
+            }
+            if (diaMesAccidents < viernes) {
+                diaMesAccidents = viernes;
+            }
+            if (diaMesAccidents < sabado) {
+                diaMesAccidents = sabado;
+            }
+            if (diaMesAccidents < domingo) {
+                diaMesAccidents = domingo;
+            }
+
+
+
+            //Per saber el nom del dia que a tingut més accidents
+
+            if (diaMesAccidents == lunes) {
+                System.out.println("El dia del mes amb més accidents és el dilluns amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == martes) {
+                System.out.println("El dia del mes amb més accidents és el dimarts amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == miercoles) {
+                System.out.println("El dia del mes amb més accidents és el dimecres amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == jueves) {
+                System.out.println("El dia del mes amb més accidents és el dijous amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == viernes) {
+                System.out.println("El dia del mes amb més accidents és el divendres amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == sabado) {
+                System.out.println("El dia del mes amb més accidents és el disabte amb: " + diaMesAccidents + " accidents.");
+            }
+            if (diaMesAccidents == domingo) {
+                System.out.println("El dia del mes amb més accidents és el diumenge amb: " + diaMesAccidents + " accidents.");
+            }
+
+
+        }
 }
+
+
+
+
+/*
+* List list = new Arraylist(accDistricte.values());
+* Collections.sort(list);
+* list = list.subList(list.size()-3.list.size());
+*
+* for (Map.Entry<Integer.Integer> entry : accDistricte.entrySet()){
+*
+*   int breaky = 0;
+*
+*   if (entry.getValues() == list.get(0)){
+*       System.out.println("El tercer districte amb més accidents és"..........)
+*   }
+*   if (entry.getValues() == list.get(1)){
+*       System.out.println("El tercer districte amb més accidents és"..........)
+*   }
+*   if (entry.getValues() == list.get(2)){
+*       System.out.println("El tercer districte amb més accidents és" .........)
+*   }
+*   if (breaky == 3){
+*       break;
+*   }
+*
+*
+* }
+*
+*
+* */
