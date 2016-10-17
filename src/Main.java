@@ -24,11 +24,12 @@ public class Main {
             Saxhandler handler = new Saxhandler();
             saxParser.parse(xmlInput,handler);
 
-            //tractarllistat(handler);
-            //MAccidents.calcularAccidentDistrictes(handler);
-            //MAccidents.carrerConflictiu(handler);
-            //MAccidents.calcularDiaAccident(handler);
+            MAccidents.calcularAccidentDistrictes(handler);
+            MAccidents.carrerConflictiu(handler);
+            MAccidents.calcularDiaAccident(handler);
             MAccidents.calcularAccidentMes(handler);
+            MAccidents.accidentsTotals(handler);
+
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -37,15 +38,5 @@ public class Main {
         }
 
     }
-
-
-    public static void tractarllistat(Saxhandler sax) {
-
-        for (Accidents acc : sax.accList) {
-            System.out.println(acc.getCodiCarrer() + "\n");
-        }
-    }
-
-
 
 }
