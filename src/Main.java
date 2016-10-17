@@ -1,5 +1,6 @@
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.Marshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -23,9 +24,10 @@ public class Main {
             Saxhandler handler = new Saxhandler();
             saxParser.parse(xmlInput,handler);
 
-           //tractarllistat(handler);
-           // MAccidents.calcularAccidentDistrictes(handler);
-            MAccidents.carrerConflictiu(handler);
+            //tractarllistat(handler);
+            //MAccidents.calcularAccidentDistrictes(handler);
+            //MAccidents.carrerConflictiu(handler);
+            MAccidents.calcularDiaAccident(handler);
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
