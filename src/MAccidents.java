@@ -300,7 +300,7 @@ public class MAccidents {
 
         }
 
-    //Per saber quin el es districte amb més accidents)
+    //Per saber quin el es Mes amb més accidents)
     public static void calcularAccidentMes(Saxhandler sax){
 
         int  enero=0;
@@ -417,6 +417,15 @@ public class MAccidents {
         if (diaMenysAccidents == diciembre) {System.out.println("El dia del mes amb més accidents és el desembre amb: " + diaMenysAccidents + " accidents.");}
     }
 
+    public static void accidentsTotals(Saxhandler sax) {
+
+        int contador = 0;
+        for (Accidents acc: sax.accList){
+            contador++;
+        }
+        System.out.println("En l'any 2015 hi ha agut: "+contador+" accidents");
+
+    }
 
 }
 
