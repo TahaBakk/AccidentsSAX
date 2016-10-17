@@ -41,8 +41,8 @@ public class MAccidents {
         int lsnumeroMayor=0, lsposicion=0;
         for (int i=1;i<listCodisCarrers.size();i++){
 
-            if (listCodisCarrers.get(i).intValue() >lsnumeroMayor){
-                lsnumeroMayor = listCodisCarrers.get(i).intValue();
+            if (listCodisCarrers.get(i) >lsnumeroMayor){
+                lsnumeroMayor = listCodisCarrers.get(i);
                 lsposicion = i;
             }
         }
@@ -51,7 +51,7 @@ public class MAccidents {
            listaCodisnoRepetits.add(hs1);
         }
 
-        String codiCarrerMésConflictiu = listaCodisnoRepetits.get(lsposicion).toString();
+        String codiCarrerMésConflictiu = listaCodisnoRepetits.get(lsposicion);
         String nombrecalle="";
         //D'aqui extreim el nom del carrer més conflictiu
         for (Accidents acc: sax.accList) {
@@ -118,8 +118,6 @@ public class MAccidents {
 
         }
 
-
-
     //Per saber quin districte te més accidents
         if (districteMesAccidents < santMarti){districteMesAccidents = santMarti;}
         if (districteMesAccidents < ciutatVella){districteMesAccidents = ciutatVella;}
@@ -133,34 +131,19 @@ public class MAccidents {
         if (districteMesAccidents < NouBarris){districteMesAccidents = NouBarris;}
         if (districteMesAccidents < Desconegut){districteMesAccidents = Desconegut;}
 
-
    //Per saber el nom del districte que a tingut més accidents
 
-        if (districteMesAccidents == santMarti){
-                System.out.println("El districte amb més accidents és Sant Martí amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == ciutatVella){
-                System.out.println("El districte amb més accidents és Ciutat Vella amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == Eixample){
-                System.out.println("El districte amb més accidents és Eixample amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == SantsMontjuïc){
-                 System.out.println("El districte amb més accidents és Sants-Montjuïc amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == LesCorts){
-                 System.out.println("El districte amb més accidents és Les Corts amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == SantAndreu){
-                 System.out.println("El districte amb més accidents és Sant Andreu amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == SarriàSantGervasi){
-                 System.out.println("El districte amb més accidents és Sarrià Sant Gervasi amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == Gràcia){
-                 System.out.println("El districte amb més accidents és Gràcia amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == HortaGuinardó){
-                 System.out.println("El districte amb més accidents és Horta Guinardó amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == NouBarris){
-                 System.out.println("El districte amb més accidents és Nou Barris amb: "+districteMesAccidents+" accidents.");}
-        if (districteMesAccidents == Desconegut){
-                 System.out.println("El districte amb més accidents és Desconegut amb: "+districteMesAccidents+" accidents.");}
-
-
-
+        if (districteMesAccidents == santMarti){System.out.println("El districte amb més accidents és Sant Martí amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == ciutatVella){System.out.println("El districte amb més accidents és Ciutat Vella amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == Eixample){System.out.println("El districte amb més accidents és Eixample amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == SantsMontjuïc){System.out.println("El districte amb més accidents és Sants-Montjuïc amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == LesCorts){System.out.println("El districte amb més accidents és Les Corts amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == SantAndreu){System.out.println("El districte amb més accidents és Sant Andreu amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == SarriàSantGervasi){System.out.println("El districte amb més accidents és Sarrià Sant Gervasi amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == Gràcia){System.out.println("El districte amb més accidents és Gràcia amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == HortaGuinardó){System.out.println("El districte amb més accidents és Horta Guinardó amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == NouBarris){System.out.println("El districte amb més accidents és Nou Barris amb: "+districteMesAccidents+" accidents.");}
+        if (districteMesAccidents == Desconegut){System.out.println("El districte amb més accidents és Desconegut amb: "+districteMesAccidents+" accidents.");}
     }
 
     //Per saber quin el es dia de la setmana amb més accidents i el que menys)
@@ -206,96 +189,42 @@ public class MAccidents {
         }
 
             //Per saber quin dia te més accidents
-            if (diaMesAccidents < lunes) {
-                diaMesAccidents = lunes;
-            }
-            if (diaMesAccidents < martes) {
-                diaMesAccidents = martes;
-            }
-            if (diaMesAccidents < miercoles) {
-                diaMesAccidents = miercoles;
-            }
-            if (diaMesAccidents < jueves) {
-                diaMesAccidents = jueves;
-            }
-            if (diaMesAccidents < viernes) {
-                diaMesAccidents = viernes;
-            }
-            if (diaMesAccidents < sabado) {
-                diaMesAccidents = sabado;
-            }
-            if (diaMesAccidents < domingo) {
-                diaMesAccidents = domingo;
-            }
+            if (diaMesAccidents < lunes) {diaMesAccidents = lunes;}
+            if (diaMesAccidents < martes) {diaMesAccidents = martes;}
+            if (diaMesAccidents < miercoles) {diaMesAccidents = miercoles;}
+            if (diaMesAccidents < jueves) {diaMesAccidents = jueves;}
+            if (diaMesAccidents < viernes) {diaMesAccidents = viernes;}
+            if (diaMesAccidents < sabado) {diaMesAccidents = sabado;}
+            if (diaMesAccidents < domingo) {diaMesAccidents = domingo;}
 
             //Per saber quin dia te menys accidents
             int diaMenysAccidents=lunes;
 
-            if (diaMenysAccidents > martes) {
-                diaMenysAccidents = martes;
-            }
-            if (diaMenysAccidents > miercoles) {
-                diaMenysAccidents = miercoles;
-            }
-            if (diaMenysAccidents > jueves) {
-                diaMenysAccidents = jueves;
-            }
-            if (diaMenysAccidents > viernes) {
-                diaMenysAccidents = viernes;
-            }
-            if (diaMenysAccidents > sabado) {
-                diaMenysAccidents = sabado;
-            }
-            if (diaMenysAccidents > domingo) {
-                diaMenysAccidents = domingo;
-            }
+            if (diaMenysAccidents > martes) {diaMenysAccidents = martes;}
+            if (diaMenysAccidents > miercoles) {diaMenysAccidents = miercoles;}
+            if (diaMenysAccidents > jueves) {diaMenysAccidents = jueves;}
+            if (diaMenysAccidents > viernes) {diaMenysAccidents = viernes;}
+            if (diaMenysAccidents > sabado) {diaMenysAccidents = sabado;}
+            if (diaMenysAccidents > domingo) {diaMenysAccidents = domingo;}
 
             //Mostra el resultat per pantalla si és cumpleix alguna d'aquests resultats
             //mostra el dia amb més accidents
-            if (diaMesAccidents == lunes) {
-                System.out.println("El dia de la setmana amb més accidents és el dilluns amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == martes) {
-                System.out.println("El dia de la setmana amb més accidents és el dimarts amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == miercoles) {
-                System.out.println("El dia de la setmana amb més accidents és el dimecres amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == jueves) {
-                System.out.println("El dia de la setmana amb més accidents és el dijous amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == viernes) {
-                System.out.println("El dia de la setmana amb més accidents és el divendres amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == sabado) {
-                System.out.println("El dia de la setmana amb més accidents és el disabte amb: " + diaMesAccidents + " accidents.");
-            }
-            if (diaMesAccidents == domingo) {
-                System.out.println("El dia de la setmana amb més accidents és el diumenge amb: " + diaMesAccidents + " accidents.");
-            }
+            if (diaMesAccidents == lunes) {System.out.println("El dia de la setmana amb més accidents és el dilluns amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == martes) {System.out.println("El dia de la setmana amb més accidents és el dimarts amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == miercoles) {System.out.println("El dia de la setmana amb més accidents és el dimecres amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == jueves) {System.out.println("El dia de la setmana amb més accidents és el dijous amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == viernes) {System.out.println("El dia de la setmana amb més accidents és el divendres amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == sabado) {System.out.println("El dia de la setmana amb més accidents és el disabte amb: " + diaMesAccidents + " accidents.");}
+            if (diaMesAccidents == domingo) {System.out.println("El dia de la setmana amb més accidents és el diumenge amb: " + diaMesAccidents + " accidents.");}
 
             //mostra el dia amb menys accidents
-            if (diaMenysAccidents == lunes) {
-                System.out.println("El dia de la setmana amb menys accidents és el dilluns amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == martes) {
-                System.out.println("El dia de la setmana amb menys accidents és el dimarts amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == miercoles) {
-                System.out.println("El dia de la setmana amb menys accidents és el dimecres amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == jueves) {
-                System.out.println("El dia de la setmana amb menys accidents és el dijous amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == viernes) {
-                System.out.println("El dia de la setmana amb menys accidents és el divendres amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == sabado) {
-                System.out.println("El dia de la setmana amb menys accidents és el disabte amb: " + diaMenysAccidents + " accidents.");
-            }
-            if (diaMenysAccidents == domingo) {
-                System.out.println("El dia de la setmana amb menys accidents és el diumenge amb: " + diaMenysAccidents + " accidents.");
-            }
+            if (diaMenysAccidents == lunes) {System.out.println("El dia de la setmana amb menys accidents és el dilluns amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == martes) {System.out.println("El dia de la setmana amb menys accidents és el dimarts amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == miercoles) {System.out.println("El dia de la setmana amb menys accidents és el dimecres amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == jueves) {System.out.println("El dia de la setmana amb menys accidents és el dijous amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == viernes) {System.out.println("El dia de la setmana amb menys accidents és el divendres amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == sabado) {System.out.println("El dia de la setmana amb menys accidents és el disabte amb: " + diaMenysAccidents + " accidents.");}
+            if (diaMenysAccidents == domingo) {System.out.println("El dia de la setmana amb menys accidents és el diumenge amb: " + diaMenysAccidents + " accidents.");}
 
 
         }
@@ -417,6 +346,7 @@ public class MAccidents {
         if (diaMenysAccidents == diciembre) {System.out.println("El dia del mes amb més accidents és el desembre amb: " + diaMenysAccidents + " accidents.");}
     }
 
+    //per saber quants accidents hi han agut durant tot l'any
     public static void accidentsTotals(Saxhandler sax) {
 
         int contador = 0;
@@ -428,34 +358,3 @@ public class MAccidents {
     }
 
 }
-
-
-
-
-/*
-* List list = new Arraylist(accDistricte.values());
-* Collections.sort(list);
-* list = list.subList(list.size()-3.list.size());
-*
-* for (Map.Entry<Integer.Integer> entry : accDistricte.entrySet()){
-*
-*   int breaky = 0;
-*
-*   if (entry.getValues() == list.get(0)){
-*       System.out.println("El tercer districte amb més accidents és"..........)
-*   }
-*   if (entry.getValues() == list.get(1)){
-*       System.out.println("El tercer districte amb més accidents és"..........)
-*   }
-*   if (entry.getValues() == list.get(2)){
-*       System.out.println("El tercer districte amb més accidents és" .........)
-*   }
-*   if (breaky == 3){
-*       break;
-*   }
-*
-*
-* }
-*
-*
-* */
