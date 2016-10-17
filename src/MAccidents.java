@@ -13,6 +13,7 @@ public class MAccidents {
     }
 
     //Aquet codi he tingut que ferlo amb haset(per tindre codis no repetits) i arraylist
+    //Per saber quin és el carrer més conflictiu
     public static void carrerConflictiu(Saxhandler sax) {
 
 
@@ -61,7 +62,7 @@ public class MAccidents {
         System.out.println("El carrer més conflictiu és: "+nombrecalle+" amb "+lsnumeroMayor);
     }
 
-    //Utilizat el switch (la manera més fàcil)
+    //Per saber quin el es districte amb més accidents)
     public static void calcularAccidentDistrictes(Saxhandler sax){
 
         int  santMarti=0;
@@ -162,7 +163,7 @@ public class MAccidents {
 
     }
 
-    //Utilizat el switch (la manera més fàcil)
+    //Per saber quin el es dia de la setmana amb més accidents i el que menys)
     public static void calcularDiaAccident(Saxhandler sax) {
 
         int lunes = 0;
@@ -175,14 +176,8 @@ public class MAccidents {
         int diaMesAccidents=0;
 
 
-       /* HashSet<String> hs = new HashSet<String>();
-        for (Accidents acc: sax.accList) {
-            hs.add(acc.getDiadesetmana());
-        }
 
-        for (String hs1: hs) {
-            System.out.println(hs1);
-        }*/
+
         //Per saber cuants accidents han agut en cada districte
         for (Accidents acc : sax.accList) {
             switch (acc.getDiadesetmana()) {
@@ -233,34 +228,81 @@ public class MAccidents {
                 diaMesAccidents = domingo;
             }
 
+            //Per saber quin dia te menys accidents
+            int diaMenysAccidents=lunes;
 
+            if (diaMenysAccidents > martes) {
+                diaMenysAccidents = martes;
+            }
+            if (diaMenysAccidents > miercoles) {
+                diaMenysAccidents = miercoles;
+            }
+            if (diaMenysAccidents > jueves) {
+                diaMenysAccidents = jueves;
+            }
+            if (diaMenysAccidents > viernes) {
+                diaMenysAccidents = viernes;
+            }
+            if (diaMenysAccidents > sabado) {
+                diaMenysAccidents = sabado;
+            }
+            if (diaMenysAccidents > domingo) {
+                diaMenysAccidents = domingo;
+            }
 
-            //Per saber el nom del dia que a tingut més accidents
-
+            //Mostra el resultat per pantalla si és cumpleix alguna d'aquests resultats
+            //mostra el dia amb més accidents
             if (diaMesAccidents == lunes) {
-                System.out.println("El dia del mes amb més accidents és el dilluns amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el dilluns amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == martes) {
-                System.out.println("El dia del mes amb més accidents és el dimarts amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el dimarts amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == miercoles) {
-                System.out.println("El dia del mes amb més accidents és el dimecres amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el dimecres amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == jueves) {
-                System.out.println("El dia del mes amb més accidents és el dijous amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el dijous amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == viernes) {
-                System.out.println("El dia del mes amb més accidents és el divendres amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el divendres amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == sabado) {
-                System.out.println("El dia del mes amb més accidents és el disabte amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el disabte amb: " + diaMesAccidents + " accidents.");
             }
             if (diaMesAccidents == domingo) {
-                System.out.println("El dia del mes amb més accidents és el diumenge amb: " + diaMesAccidents + " accidents.");
+                System.out.println("El dia de la setmana amb més accidents és el diumenge amb: " + diaMesAccidents + " accidents.");
+            }
+
+            //mostra el dia amb menys accidents
+            if (diaMenysAccidents == lunes) {
+                System.out.println("El dia de la setmana amb menys accidents és el dilluns amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == martes) {
+                System.out.println("El dia de la setmana amb menys accidents és el dimarts amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == miercoles) {
+                System.out.println("El dia de la setmana amb menys accidents és el dimecres amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == jueves) {
+                System.out.println("El dia de la setmana amb menys accidents és el dijous amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == viernes) {
+                System.out.println("El dia de la setmana amb menys accidents és el divendres amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == sabado) {
+                System.out.println("El dia de la setmana amb menys accidents és el disabte amb: " + diaMenysAccidents + " accidents.");
+            }
+            if (diaMenysAccidents == domingo) {
+                System.out.println("El dia de la setmana amb menys accidents és el diumenge amb: " + diaMenysAccidents + " accidents.");
             }
 
 
         }
+
+
+
+
 }
 
 
