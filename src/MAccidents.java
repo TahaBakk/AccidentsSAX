@@ -300,7 +300,122 @@ public class MAccidents {
 
         }
 
+    //Per saber quin el es districte amb més accidents)
+    public static void calcularAccidentMes(Saxhandler sax){
 
+        int  enero=0;
+        int  febrero=0;
+        int  marzo=0;
+        int  abril=0;
+        int  mayo=0;
+        int  junio=0;
+        int  julio=0;
+        int  agosto=0;
+        int  septiembre=0;
+        int  octubre=0;
+        int  noviembre=0;
+        int  diciembre=0;
+        int  diaMesAccidents=0;
+
+        //Per saber cuants accidents han agut en cada districte
+        for (Accidents acc : sax.accList) {
+            switch (acc.getNommes()) {
+                case "Gener":
+                    enero++;
+                    break;
+                case "Febrer":
+                    febrero++;
+                    break;
+                case "Març":
+                    marzo++;
+                    break;
+                case "Abril":
+                    abril++;
+                    break;
+                case "Maig":
+                    mayo++;
+                    break;
+                case "Juny":
+                    junio++;
+                    break;
+                case "Juliol":
+                    julio++;
+                    break;
+                case "Agost":
+                    agosto++;
+                    break;
+                case "Setembre":
+                    septiembre++;
+                case "Nou Barris":
+                    octubre++;
+                    break;
+                case "Novembre":
+                    noviembre++;
+                    break;
+                case "Desembre":
+                    diciembre++;
+                    break;
+            }
+
+        }
+
+        //Per saber quin dia te més accidents
+        if (diaMesAccidents < enero) {diaMesAccidents = enero;}
+        if (diaMesAccidents < febrero) {diaMesAccidents = febrero;}
+        if (diaMesAccidents < marzo) {diaMesAccidents = marzo;}
+        if (diaMesAccidents < abril) {diaMesAccidents = abril;}
+        if (diaMesAccidents < mayo) {diaMesAccidents = mayo;}
+        if (diaMesAccidents < junio) {diaMesAccidents = junio;}
+        if (diaMesAccidents < julio) {diaMesAccidents = julio;}
+        if (diaMesAccidents < septiembre) {diaMesAccidents = septiembre;}
+        if (diaMesAccidents < octubre) {diaMesAccidents = octubre;}
+        if (diaMesAccidents < noviembre) {diaMesAccidents = noviembre;}
+        if (diaMesAccidents < diciembre) {diaMesAccidents = diciembre;}
+
+        //Per saber quin dia te menys accidents
+        int diaMenysAccidents=enero;
+
+        if (diaMenysAccidents > febrero) {diaMenysAccidents = febrero;}
+        if (diaMenysAccidents > marzo) {diaMenysAccidents = marzo;}
+        if (diaMenysAccidents > abril) {diaMenysAccidents = abril;}
+        if (diaMenysAccidents > mayo) {diaMenysAccidents = mayo;}
+        if (diaMenysAccidents > junio) {diaMenysAccidents = junio;}
+        if (diaMenysAccidents > julio) {diaMenysAccidents = julio;}
+        if (diaMenysAccidents > agosto) {diaMenysAccidents = agosto;}
+        if (diaMenysAccidents > septiembre) {diaMenysAccidents = septiembre;}
+        if (diaMenysAccidents > octubre) {diaMenysAccidents = octubre;}
+        if (diaMenysAccidents > noviembre) {diaMenysAccidents = noviembre;}
+        if (diaMenysAccidents > diciembre) {diaMenysAccidents = diciembre;}
+
+        //Mostra el resultat per pantalla si és cumpleix alguna d'aquests resultats
+        //mostra el dia amb més accidents
+        if (diaMesAccidents == enero) {System.out.println("El dia del mes amb més accidents és el gener amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == febrero) {System.out.println("El dia del mes amb més accidents és el febrer amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == marzo) {System.out.println("El dia del mes amb més accidents és el març amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == abril) {System.out.println("El dia del mes amb més accidents és el abril amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == mayo) {System.out.println("El dia del mes amb més accidents és el maig amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == junio) {System.out.println("El dia del mes amb més accidents és el juny amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == julio) {System.out.println("El dia del mes amb més accidents és el juliol amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == agosto) {System.out.println("El dia del mes amb més accidents és el agost amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == septiembre) {System.out.println("El dia del mes amb més accidents és el septembre amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == octubre) {System.out.println("El dia del mes amb més accidents és el octubre amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == noviembre) {System.out.println("El dia del mes amb més accidents és el novembre amb: " + diaMesAccidents + " accidents.");}
+        if (diaMesAccidents == diciembre) {System.out.println("El dia del mes amb més accidents és el desembre amb: " + diaMesAccidents + " accidents.");}
+
+        //mostra el dia amb menys accidents
+        if (diaMenysAccidents == enero) {System.out.println("El dia del mes amb més accidents és el gener amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == febrero) {System.out.println("El dia del mes amb més accidents és el febrer amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == marzo) {System.out.println("El dia del mes amb més accidents és el març amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == abril) {System.out.println("El dia del mes amb més accidents és el abril amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == mayo) {System.out.println("El dia del mes amb més accidents és el maig amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == junio) {System.out.println("El dia del mes amb més accidents és el juny amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == julio) {System.out.println("El dia del mes amb més accidents és el juliol amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == agosto) {System.out.println("El dia del mes amb més accidents és el agost amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == septiembre) {System.out.println("El dia del mes amb més accidents és el septembre amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == octubre) {System.out.println("El dia del mes amb més accidents és el octubre amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == noviembre) {System.out.println("El dia del mes amb més accidents és el novembre amb: " + diaMenysAccidents + " accidents.");}
+        if (diaMenysAccidents == diciembre) {System.out.println("El dia del mes amb més accidents és el desembre amb: " + diaMenysAccidents + " accidents.");}
+    }
 
 
 }
